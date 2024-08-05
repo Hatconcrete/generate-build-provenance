@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Setup Node.js
         id: setup-node
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           node-version: 18
           cache: npm
@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Test Local Action
         id: test-action
         uses: ./
@@ -72,7 +72,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Test Local Action
         id: test-action
         uses: ./
@@ -94,7 +94,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Build Dockerfile
         run: |
           cat <<EOF > Dockerfile
@@ -102,7 +102,7 @@ jobs:
           COPY README.md .
           EOF
       - name: Login to GHCR
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3.1.0
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -133,7 +133,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Test Local Action
         id: test-action
         env:
